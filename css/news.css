@@ -1,0 +1,213 @@
+/* CSS Specific for News & Announcements Page */
+
+.news-hero {
+    padding: 160px 24px 60px;
+    background: linear-gradient(135deg, rgba(37, 99, 235, 0.05), rgba(6, 182, 212, 0.03));
+    text-align: center;
+}
+
+.news-hero h1 {
+    font-family: var(--font-heading);
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 16px;
+    color: var(--primary);
+}
+
+.news-hero p {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Catalog Filter */
+.news-catalog {
+    padding: 60px 24px 100px;
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+.news-filters {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.news-search {
+    position: relative;
+    max-width: 320px;
+    width: 100%;
+}
+
+.news-search svg {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 18px;
+    height: 18px;
+    fill: var(--text-muted);
+}
+
+.news-search input {
+    width: 100%;
+    padding: 10px 12px 10px 40px;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border-light);
+    outline: none;
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+}
+
+.news-search input:focus {
+    border-color: var(--primary);
+}
+
+/* Category selectors */
+.category-pills {
+    display: flex;
+    gap: 8px;
+}
+
+.pill-btn {
+    padding: 8px 16px;
+    border-radius: var(--radius-full);
+    border: 1px solid var(--border-light);
+    background: white;
+    cursor: pointer;
+    font-family: var(--font-heading);
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    transition: background var(--transition-fast), color var(--transition-fast);
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.pill-btn:hover, .pill-btn.active {
+    background: var(--primary);
+    color: white;
+    border-color: var(--primary);
+}
+
+/* Grid Layout */
+.news-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+}
+
+.bulletin-badge {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: var(--radius-sm);
+    color: white;
+}
+
+.badge-urgent {
+    background-color: var(--danger);
+}
+
+.badge-general {
+    background-color: var(--primary);
+}
+
+.badge-warning-type {
+    background-color: var(--warning);
+}
+
+/* Responsive News */
+@media (max-width: 968px) {
+    .news-cards-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 640px) {
+    .news-cards-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .news-filters {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .news-search {
+        max-width: 100%;
+    }
+    
+    .category-pills {
+        flex-direction: column;
+        width: 100%;
+        gap: 8px;
+    }
+    
+    .category-pills .pill-btn {
+        width: 100%;
+        text-align: center;
+        box-sizing: border-box;
+    }
+}
+.news-img-container {
+    position: relative;
+    height: 180px;
+    background: linear-gradient(rgba(15, 23, 42, 0.4), rgba(15, 23, 42, 0.45)), url('../assets/hero_bg.webp') no-repeat center center;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.news-img-container svg {
+    width: 48px;
+    height: 48px;
+    fill: white;
+}
+
+/* News Cards Layout and Details */
+.news-card {
+    background: white;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+    border: 1px solid var(--border-light);
+}
+
+.news-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-lg);
+}
+
+.news-body {
+    padding: 24px;
+}
+
+.news-meta {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-bottom: 12px;
+    display: flex;
+    gap: 16px;
+}
+
+.news-body h3 {
+    font-family: var(--font-heading);
+    font-size: 1.25rem;
+    margin-bottom: 12px;
+    line-height: 1.4;
+}
+
+.news-body p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    margin-bottom: 20px;
+}

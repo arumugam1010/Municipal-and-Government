@@ -1,0 +1,125 @@
+/* CSS Design System & Variables for Municipal Portal */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+    /* Color Palette */
+    --primary: #2563eb;          /* Digital Blue */
+    --primary-hover: #1d4ed8;
+    --primary-glow: rgba(37, 99, 235, 0.15);
+    
+    --secondary: #06b6d4;        /* Cyan */
+    --secondary-hover: #0891b2;
+    --secondary-glow: rgba(6, 182, 212, 0.15);
+    
+    --success: #10b981;          /* Emerald Green */
+    --success-glow: rgba(16, 185, 129, 0.15);
+    
+    --warning: #f59e0b;          /* Amber */
+    --danger: #ef4444;           /* Red */
+    
+    /* Backgrounds */
+    --bg-light: #f8fafc;         /* Soft Gray */
+    --bg-card-light: #ffffff;
+    --bg-dark: #f1f5f9;          /* Light slate gray instead of dark navy */
+    --bg-card-dark: rgba(255, 255, 255, 0.8);
+    
+    /* Text */
+    --text-main: #0f172a;
+    --text-muted: #64748b;
+    --text-white: #ffffff;
+    --text-white-muted: #475569; /* Slate gray for readability */
+    
+    /* Borders & Outlines */
+    --border-light: rgba(15, 23, 42, 0.08);
+    --border-white: rgba(15, 23, 42, 0.08);
+    
+    /* Glassmorphism Defaults */
+    --glass-bg: rgba(255, 255, 255, 0.7);
+    --glass-bg-dark: rgba(255, 255, 255, 0.85);
+    --glass-border: rgba(15, 23, 42, 0.08);
+    --glass-border-dark: rgba(15, 23, 42, 0.06);
+    --glass-blur: blur(16px);
+    
+    /* Card Shadows & Glows */
+    --shadow-sm: 0 2px 8px -1px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 8px 30px -4px rgba(15, 23, 42, 0.06);
+    --shadow-lg: 0 20px 40px -8px rgba(15, 23, 42, 0.1);
+    --shadow-glow: 0 0 25px rgba(37, 99, 235, 0.08);
+    
+    /* Typography */
+    --font-heading: 'Poppins', sans-serif;
+    --font-body: 'Poppins', sans-serif;
+    
+    /* Spacings & Radius */
+    --radius-sm: 8px;
+    --radius-md: 16px;
+    --radius-lg: 24px;
+    --radius-full: 9999px;
+    
+    --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-normal: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-slow: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Base Light/Dark Utility selectors */
+[data-theme="dark"] {
+    --text-main: #0f172a;
+    --text-muted: #64748b;
+    --border-light: rgba(15, 23, 42, 0.08);
+}
+
+
+/* Animations */
+@keyframes float {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-10px) rotate(3deg); }
+}
+
+@keyframes pulse-glow {
+    0%, 100% { box-shadow: 0 0 15px var(--primary-glow); }
+    50% { box-shadow: 0 0 30px var(--primary-glow); }
+}
+
+@keyframes gradient-bg {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@keyframes ripple-effect {
+    to {
+        width: 150px;
+        height: 150px;
+        opacity: 0;
+    }
+}
+
+@keyframes slide-in-right {
+    from { transform: translateX(20px); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes fade-in-up {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes particle-motion {
+    0% { transform: translateY(0) translateX(0) scale(1); opacity: 0.3; }
+    50% { transform: translateY(-100px) translateX(20px) scale(1.2); opacity: 0.7; }
+    100% { transform: translateY(-200px) translateX(-20px) scale(0.8); opacity: 0; }
+}
+
+/* Utility Animations */
+.animate-float {
+    animation: float 6s ease-in-out infinite;
+}
+
+.animate-fade-up {
+    animation: fade-in-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-pulse-glow {
+    animation: pulse-glow 3s infinite ease-in-out;
+}
