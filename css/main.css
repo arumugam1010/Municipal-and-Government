@@ -211,7 +211,7 @@ html, body {
 .nav-toggle span {
     width: 24px;
     height: 2px;
-    background-color: #ffffff;
+    background-color: var(--text-main);
     transition: transform var(--transition-fast), opacity var(--transition-fast);
 }
 
@@ -243,7 +243,7 @@ html, body {
 footer {
     background-color: #0b0f19;
     color: var(--text-white);
-    padding: 80px 24px 30px;
+    padding: 50px 24px 20px;
     position: relative;
     z-index: 2;
 }
@@ -254,7 +254,7 @@ footer {
     display: grid;
     grid-template-columns: 2fr 1fr 1fr 1.5fr;
     gap: 64px;
-    margin-bottom: 60px;
+    margin-bottom: 30px;
 }
 
 .footer-brand .logo {
@@ -337,7 +337,7 @@ footer {
 .footer-bottom {
     max-width: 1280px;
     margin: 0 auto;
-    padding-top: 30px;
+    padding-top: 20px;
     border-top: 1px solid rgba(255, 255, 255, 0.05);
     display: flex;
     justify-content: space-between;
@@ -704,14 +704,14 @@ footer {
 }
 
 /* Modern Animated Card Styles - Apply globally to all card structures */
-.news-card, .service-card, .dept-card, .glass-card, .process-step-card, .info-box, .vector-map-wrapper, .checklist-card, .transit-card {
+.news-card, .service-card, .dept-card, .glass-card, .process-step-card, .info-box, .vector-map-wrapper, .checklist-card, .transit-card, .officer-card {
     transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), 
                 box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1), 
                 border-color 0.4s ease !important;
     overflow: hidden;
 }
 
-.news-card:hover, .service-card:hover, .dept-card:hover, .glass-card:hover, .process-step-card:hover, .info-box:hover, .vector-map-wrapper:hover, .checklist-card:hover, .transit-card:hover {
+.news-card:hover, .service-card:hover, .dept-card:hover, .glass-card:hover, .process-step-card:hover, .info-box:hover, .vector-map-wrapper:hover, .checklist-card:hover, .transit-card:hover, .officer-card:hover {
     transform: translateY(-8px) scale(1.02) !important;
     border-color: var(--primary) !important;
     box-shadow: 0 20px 40px rgba(15, 23, 42, 0.08), 0 8px 16px rgba(37, 99, 235, 0.15) !important;
@@ -772,8 +772,8 @@ footer {
 /* Footer Middle Bar (Social & Newsletter) */
 .footer-middle-bar {
     max-width: 1280px;
-    margin: 40px auto 30px;
-    padding-bottom: 30px;
+    margin: 20px auto 20px;
+    padding-bottom: 20px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
     display: flex;
     justify-content: space-between;

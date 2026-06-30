@@ -59,6 +59,13 @@ function initNavbar() {
                 toggleMobileMenu(false);
             });
         }
+
+        // Close menu if window is resized beyond mobile breakpoint
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 768) {
+                toggleMobileMenu(false);
+            }
+        });
     }
 }
 
