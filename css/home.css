@@ -3,7 +3,7 @@
 /* Hero Banner */
 .hero {
     position: relative;
-    padding: 180px 24px 100px;
+    padding: 220px 24px 220px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -138,7 +138,7 @@
 /* Counters section */
 .stats {
     padding: 80px 24px;
-    background: white;
+    background: var(--bg-card-light);
     position: relative;
     z-index: 2;
 }
@@ -206,7 +206,7 @@
 /* News Section */
 .news-highlights {
     padding: 100px 24px;
-    background: var(--bg-light);
+    background: transparent;
     position: relative;
     z-index: 2;
 }
@@ -220,7 +220,7 @@
 }
 
 .news-card {
-    background: white;
+    background: var(--bg-card-light);
     border-radius: var(--radius-md);
     overflow: hidden;
     box-shadow: var(--shadow-sm);
@@ -315,7 +315,7 @@
 
 /* Step Cards with Animated Border Hover & Staggered Entrance */
 .process-step-card {
-    background: #ffffff;
+    background: var(--bg-card-light);
     border: 1px solid var(--border-light);
     padding: 32px 24px;
     border-radius: var(--radius-md);
@@ -330,8 +330,23 @@
 
 .process-step-card:hover {
     transform: translateY(-8px) scale(1.02);
-    border-color: var(--primary) !important;
     box-shadow: 0 20px 40px rgba(15, 23, 42, 0.08), 0 8px 16px rgba(37, 99, 235, 0.15) !important;
+}
+
+/* Step Card Themed Colors */
+.step-card-blue {
+    background: #eff6ff !important;
+    border-color: rgba(37, 99, 235, 0.15) !important;
+}
+
+.step-card-cyan {
+    background: #ecfeff !important;
+    border-color: rgba(6, 182, 212, 0.15) !important;
+}
+
+.step-card-green {
+    background: #f0fdf4 !important;
+    border-color: rgba(16, 185, 129, 0.15) !important;
 }
 
 .workflow.reveal.active .process-step-card {
@@ -353,7 +368,7 @@
 
 /* Calculator Section Responsive Styles */
 .calculator-card {
-    background: white;
+    background: var(--bg-card-light);
     border: 1px solid var(--border-light);
     border-radius: var(--radius-md);
     padding: 48px;
@@ -399,4 +414,35 @@
     .calculator-form-col {
         padding: 16px !important;
     }
+}
+
+/* Highlights Card Themed Colors */
+.highlight-card-blue {
+    background: #eff6ff !important;
+    border: 1px solid rgba(37, 99, 235, 0.15) !important;
+}
+.highlight-card-blue:hover {
+    background: #dbeafe !important;
+    border-color: var(--primary) !important;
+    box-shadow: var(--shadow-lg), 0 8px 16px rgba(37, 99, 235, 0.1) !important;
+}
+
+.highlight-card-cyan {
+    background: #ecfeff !important;
+    border: 1px solid rgba(6, 182, 212, 0.15) !important;
+}
+.highlight-card-cyan:hover {
+    background: #cffafe !important;
+    border-color: var(--secondary) !important;
+    box-shadow: var(--shadow-lg), 0 8px 16px rgba(6, 182, 212, 0.1) !important;
+}
+
+.highlight-card-green {
+    background: #f0fdf4 !important;
+    border: 1px solid rgba(16, 185, 129, 0.15) !important;
+}
+.highlight-card-green:hover {
+    background: #dcfce7 !important;
+    border-color: var(--success) !important;
+    box-shadow: var(--shadow-lg), 0 8px 16px rgba(16, 185, 129, 0.1) !important;
 }

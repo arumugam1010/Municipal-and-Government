@@ -44,7 +44,7 @@ function initNavbar() {
         toggleBtn.addEventListener('click', () => {
             toggleMobileMenu(!navMenu.classList.contains('active'));
         });
-        
+
         // Close menu on link click
         navMenu.querySelectorAll('.nav-link').forEach(link => {
             link.addEventListener('click', () => {
@@ -74,21 +74,21 @@ function initRipples() {
     document.addEventListener('click', (e) => {
         const btn = e.target.closest('.btn');
         if (!btn) return;
-        
+
         // Remove old ripples
         const oldRipples = btn.querySelectorAll('.ripple');
         oldRipples.forEach(r => r.remove());
 
         const ripple = document.createElement('span');
         ripple.classList.add('ripple');
-        
+
         const rect = btn.getBoundingClientRect();
         const x = e.clientX - rect.left;
         const y = e.clientY - rect.top;
-        
+
         ripple.style.left = `${x}px`;
         ripple.style.top = `${y}px`;
-        
+
         btn.appendChild(ripple);
     });
 }
@@ -102,19 +102,19 @@ function initParticles() {
     for (let i = 0; i < count; i++) {
         const particle = document.createElement('div');
         particle.classList.add('particle');
-        
+
         const size = Math.random() * 20 + 8; // 8px to 28px
         particle.style.width = `${size}px`;
         particle.style.height = `${size}px`;
-        
+
         particle.style.left = `${Math.random() * 100}vw`;
         particle.style.top = `${Math.random() * 100}vh`;
-        
+
         const duration = Math.random() * 8 + 6; // 6s to 14s
         const delay = Math.random() * 5;
         particle.style.animationDuration = `${duration}s`;
         particle.style.animationDelay = `-${delay}s`;
-        
+
         container.appendChild(particle);
     }
 }
@@ -205,15 +205,15 @@ function initPreloader() {
         // Prevent user scrolling during load
         document.body.style.overflow = 'hidden';
         document.documentElement.style.overflow = 'hidden';
-        
+
         setTimeout(() => {
             preloader.style.opacity = '0';
             preloader.style.visibility = 'hidden';
-            
+
             // Restore scrollability
             document.body.style.overflow = '';
             document.documentElement.style.overflow = '';
-            
+
             setTimeout(() => {
                 preloader.remove();
             }, 500);

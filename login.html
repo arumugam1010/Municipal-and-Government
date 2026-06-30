@@ -60,6 +60,7 @@
                     <div class="form-group" style="margin-bottom: 30px;">
                         <label class="form-label" for="loginPass">Password</label>
                         <input type="password" id="loginPass" class="auth-input" placeholder="••••••••" required>
+                        <div class="error-message" id="loginPassError">Password must be at least 8 characters and contain uppercase, lowercase, and symbols.</div>
                     </div>
 
                     <button type="submit" class="btn btn-primary" style="width: 100%; padding: 12px;">Access
@@ -81,6 +82,108 @@
                 </div>
             </div>
         </div>
+    <!-- Animated Municipal & Government Skyline Background Elements -->
+    <div class="auth-municipal-background">
+        <!-- Skyline silhouette vector -->
+        <svg viewBox="0 0 1200 200" width="100%" height="100%" preserveAspectRatio="none" style="position: absolute; bottom: 0; left: 0;">
+            <!-- Background hills -->
+            <path d="M0 160 Q 300 125 600 175 T 1200 155 L 1200 200 L 0 200 Z" fill="var(--primary)" opacity="0.08"/>
+            <!-- City Hall Dome, Buildings, trees -->
+            <path d="M0 200 L 0 140 L 40 140 L 40 200 
+                     L 80 200 L 80 120 L 130 120 L 130 90 L 170 90 L 170 120 L 220 120 L 220 200 
+                     L 260 200 L 260 150 L 320 150 L 320 200 
+                     L 360 200 L 360 135 L 400 95 L 440 135 L 440 200 
+                     /* City Hall Dome */
+                     L 500 200 L 500 105 L 520 105 L 520 85 Q 550 55 580 85 L 580 105 L 600 105 L 600 200 
+                     L 660 200 L 660 140 L 720 140 L 720 200 
+                     L 760 200 L 760 110 L 820 110 L 820 200 
+                     L 880 200 L 880 160 L 940 160 L 940 200 
+                     L 980 200 L 980 130 L 1020 90 L 1060 130 L 1060 200 
+                     L 1200 200 Z" fill="var(--primary)" opacity="0.12"/>
+        </svg>
+        
+        <!-- Floating clouds across the full height of the page -->
+        <div class="auth-cloud cloud-1" style="top: 8%; left: 5%;">
+            <svg width="70" height="35" viewBox="0 0 60 30" fill="var(--primary)" opacity="0.12">
+                <path d="M10 20 A 10 10 0 0 1 25 12 A 15 15 0 0 1 50 15 A 10 10 0 0 1 50 25 Z"/>
+            </svg>
+        </div>
+        <div class="auth-cloud cloud-2" style="top: 22%; left: 50%;">
+            <svg width="90" height="45" viewBox="0 0 80 40" fill="var(--secondary)" opacity="0.12">
+                <path d="M12 25 A 12 12 0 0 1 30 15 A 18 18 0 0 1 65 20 A 12 12 0 0 1 65 32 Z"/>
+            </svg>
+        </div>
+        <div class="auth-cloud cloud-1" style="top: 45%; left: 20%; animation-delay: -6s; animation-duration: 40s;">
+            <svg width="60" height="30" viewBox="0 0 60 30" fill="var(--success)" opacity="0.1">
+                <path d="M10 20 A 10 10 0 0 1 25 12 A 15 15 0 0 1 50 15 A 10 10 0 0 1 50 25 Z"/>
+            </svg>
+        </div>
+        <div class="auth-cloud cloud-2" style="top: 65%; left: 70%; animation-delay: -12s; animation-duration: 50s;">
+            <svg width="85" height="42" viewBox="0 0 80 40" fill="var(--primary)" opacity="0.12">
+                <path d="M12 25 A 12 12 0 0 1 30 15 A 18 18 0 0 1 65 20 A 12 12 0 0 1 65 32 Z"/>
+            </svg>
+        </div>
+        <div class="auth-cloud cloud-1" style="top: 82%; left: 15%; animation-delay: -18s; animation-duration: 30s;">
+            <svg width="75" height="37" viewBox="0 0 60 30" fill="var(--secondary)" opacity="0.1">
+                <path d="M10 20 A 10 10 0 0 1 25 12 A 15 15 0 0 1 50 15 A 10 10 0 0 1 50 25 Z"/>
+            </svg>
+        </div>
+
+        <!-- Rotating clean energy turbines (Eco energy theme) -->
+        <div style="position: absolute; bottom: 70px; left: 18%; transform-origin: 50% 100%;">
+            <svg width="36" height="36" viewBox="0 0 40 40" style="animation: spinGear 7s linear infinite; transform-origin: 20px 20px;">
+                <path d="M20 20 L 20 0 L 22 20 Z M20 20 L 37 30 L 20 22 Z M20 20 L 3 30 L 20 22 Z" fill="var(--primary)" opacity="0.15"/>
+            </svg>
+            <div style="width: 2px; height: 36px; background: rgba(37,99,235,0.12); margin-left: 17px; margin-top: -18px;"></div>
+        </div>
+        <div style="position: absolute; bottom: 85px; right: 22%; transform-origin: 50% 100%;">
+            <svg width="28" height="28" viewBox="0 0 40 40" style="animation: spinGear 9s linear infinite; transform-origin: 20px 20px;">
+                <path d="M20 20 L 20 0 L 22 20 Z M20 20 L 37 30 L 20 22 Z M20 20 L 3 30 L 20 22 Z" fill="var(--primary)" opacity="0.15"/>
+            </svg>
+            <div style="width: 2px; height: 28px; background: rgba(37,99,235,0.12); margin-left: 13px; margin-top: -14px;"></div>
+        </div>
+
+        <!-- Animated driving municipal vehicle (Eco bus/service truck) -->
+        <div class="municipal-vehicle" style="bottom: 0;">
+            <svg viewBox="0 0 24 24" style="width: 32px; height: 32px; fill: var(--primary); opacity: 0.15;">
+                <path d="M20 8h-3V4H4c-1.1 0-2 .9-2 2v11h2c0 1.66 1.34 3 3 3s3-1.34 3-3h6c0 1.66 1.34 3 3 3s3-1.34 3-3h2v-5l-3-4zM6 18.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm12 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm2-5.5h-3V9h3v4z"/>
+            </svg>
+        </div>
+        <div class="municipal-vehicle-2" style="bottom: 4px;">
+            <svg viewBox="0 0 24 24" style="width: 24px; height: 24px; fill: var(--secondary); opacity: 0.12;">
+                <path d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.21.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99zM6.5 16c-.83 0-1.5-.67-1.5-1.5S5.67 13 6.5 13s1.5.67 1.5 1.5S7.33 16 6.5 16zm11 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zM5 11l1.5-4.5h11L19 11H5z"/>
+            </svg>
+    </div>
+        <!-- Side decoration vectors visible on desktop without scroll -->
+        <div class="auth-side-decor auth-side-decor-left">
+            <!-- Rotating Gear (PWD / Infrastructure theme) -->
+            <div style="animation: spinGear 15s linear infinite; width: 68px; height: 68px;">
+                <svg viewBox="0 0 24 24" style="fill: var(--primary); opacity: 0.35; width: 100%; height: 100%;">
+                    <path d="M19.43 12.98c.04-.32.07-.64.07-.98s-.03-.66-.07-.98l2.11-1.65c.19-.15.24-.42.12-.64l-2-3.46c-.12-.22-.39-.3-.61-.22l-2.49 1c-.52-.4-1.08-.73-1.69-.98l-.38-2.65C14.46 2.18 14.25 2 14 2h-4c-.25 0-.46.18-.49.42l-.38 2.65c-.61.25-1.17.59-1.69.98l-2.49-1c-.23-.09-.49 0-.61.22l-2 3.46c-.13.22-.07.49.12.64l2.11 1.65c-.04.32-.07.65-.07.98s.03.66.07.98l-2.11 1.65c-.19.15-.24.42-.12.64l2 3.46c.12.22.39.3.61.22l2.49-1c.52.4 1.08.73 1.69.98l.38 2.65c.03.24.24.42.49.42h4c.25 0 .46-.18.49-.42l-.38-2.65c.61-.25 1.17-.59 1.69-.98l2.49 1c.23.09.49 0 .61-.22l2-3.46c.12-.22.07-.49-.12-.64l-2.11-1.65zM12 15.5c-1.93 0-3.5-1.57-3.5-3.5s1.57-3.5 3.5-3.5 3.5 1.57 3.5 3.5-1.57 3.5-3.5 3.5z"/>
+                </svg>
+            </div>
+            <!-- Bouncing Eco building card -->
+            <div style="animation: floatBlob1 9s infinite ease-in-out; width: 56px; height: 56px;">
+                <svg viewBox="0 0 24 24" style="fill: var(--success); opacity: 0.35; width: 100%; height: 100%;">
+                    <path d="M12 3L2 12h3v8h6v-6h2v6h6v-8h3L12 3zm-2 10c0-1.1.9-2 2-2s2 .9 2 2h-4z"/>
+                </svg>
+            </div>
+        </div>
+        <div class="auth-side-decor auth-side-decor-right">
+            <!-- Rotating turbine wheel (Clean energy theme) -->
+            <div style="animation: spinGear 9s linear infinite reverse; width: 62px; height: 62px;">
+                <svg viewBox="0 0 24 24" style="fill: var(--secondary); opacity: 0.35; width: 100%; height: 100%;">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 16h-2v-2h2v2zm0-4h-2V7h2v7z"/>
+                </svg>
+            </div>
+            <!-- Bouncing secure verification badge (Government trust theme) -->
+            <div style="animation: floatBlob2 11s infinite ease-in-out; width: 60px; height: 60px;">
+                <svg viewBox="0 0 24 24" style="fill: var(--primary); opacity: 0.35; width: 100%; height: 100%;">
+                    <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 15l-4-4 1.41-1.41L10 13.17l5.59-5.59L17 9l-7 7z"/>
+                </svg>
+            </div>
+        </div>
+    </div>
     </div>
 
     <script src="js/auth.js"></script>

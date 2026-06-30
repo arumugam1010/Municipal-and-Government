@@ -3,7 +3,10 @@
 @import url('variables.css');
 
 body.dashboard-body {
-    background: var(--bg-light);
+    background-image: linear-gradient(rgba(241, 245, 249, 0.93), rgba(241, 245, 249, 0.93)), url('../assets/smart_city_cloud.webp');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
     color: var(--text-main);
     min-height: 100vh;
     display: flex;
@@ -280,20 +283,41 @@ body.dashboard-body {
 }
 
 .metric-card {
-    background: #ffffff;
-    border: 1px solid rgba(15, 23, 42, 0.06);
     border-radius: var(--radius-md);
     padding: 24px;
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
     box-shadow: var(--shadow-sm);
+    transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.metric-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+}
+
+.metric-card:nth-child(1) {
+    background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%) !important;
+    border: 1px solid rgba(37, 99, 235, 0.18) !important;
+}
+.metric-card:nth-child(2) {
+    background: linear-gradient(135deg, #ecfeff 0%, #cffafe 100%) !important;
+    border: 1px solid rgba(6, 182, 212, 0.18) !important;
+}
+.metric-card:nth-child(3) {
+    background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%) !important;
+    border: 1px solid rgba(16, 185, 129, 0.18) !important;
+}
+.metric-card:nth-child(4) {
+    background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%) !important;
+    border: 1px solid rgba(245, 158, 11, 0.18) !important;
 }
 
 .metric-card-info h3 {
     font-size: 0.85rem;
     color: var(--text-muted);
-    font-weight: 500;
+    font-weight: 600;
     margin-bottom: 8px;
     text-transform: uppercase;
     letter-spacing: 0.5px;
@@ -339,8 +363,8 @@ body.dashboard-body {
 }
 
 .dash-panel {
-    background: #ffffff;
-    border: 1px solid rgba(15, 23, 42, 0.06);
+    background: linear-gradient(135deg, #f8fafc 0%, #eff6ff 100%) !important;
+    border: 1px solid rgba(37, 99, 235, 0.08) !important;
     border-radius: var(--radius-md);
     padding: 32px;
     box-shadow: var(--shadow-sm);

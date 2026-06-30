@@ -135,4 +135,55 @@ function initDashboard() {
             }
         });
     }
+
+    // Dynamic Validation setup for name and phone inputs in dashboard profile/form pages
+    const dashboardInputs = document.querySelectorAll('input[type="text"], input[type="tel"]');
+    dashboardInputs.forEach(input => {
+        let label = input.previousElementSibling;
+        if (!label && input.parentElement) {
+            label = input.parentElement.querySelector('label');
+        }
+        
+        if (label) {
+            const labelText = label.textContent.toLowerCase();
+            
+            // 1. Full Name: prevent numbers
+            if (labelText.includes('name')) {
+                input.addEventListener('keydown', (e) => {
+                    if (/\d/.test(e.key) && e.key.length === 1) {
+                        e.preventDefault();
+                    }
+                });
+                
+                input.addEventListener('input', () => {
+                    const val = input.value;
+                    if (/\d/.test(val)) {
+                        const start = input.selectionStart;
+                        input.value = val.replace(/\d/g, '');
+                        const diff = val.length - input.value.length;
+                        input.setSelectionRange(start - diff, start - diff);
+                    }
+                });
+            }
+            
+            // 2. Phone Reference: prevent alphabets
+            if (labelText.includes('phone') || labelText.includes('mobile')) {
+                input.addEventListener('keydown', (e) => {
+                    if (/[a-zA-Z]/.test(e.key) && e.key.length === 1) {
+                        e.preventDefault();
+                    }
+                });
+                
+                input.addEventListener('input', () => {
+                    const val = input.value;
+                    if (/[a-zA-Z]/.test(val)) {
+                        const start = input.selectionStart;
+                        input.value = val.replace(/[a-zA-Z]/g, '');
+                        const diff = val.length - input.value.length;
+                        input.setSelectionRange(start - diff, start - diff);
+                    }
+                });
+            }
+        }
+    });
 }
