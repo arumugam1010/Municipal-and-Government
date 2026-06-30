@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initScrollReveal();
     initCounters();
     checkSessionNavbar();
+    initHeroSlideshow();
 });
 
 /* Navbar scroll effect & mobile toggle */
@@ -219,4 +220,92 @@ function initPreloader() {
             }, 500);
         }, 3000);
     }
+}
+
+/* Interactive Synchronized Slideshow */
+function initHeroSlideshow() {
+    const slideshow = document.querySelector('.hero-slideshow');
+    if (!slideshow) return;
+
+    const slides = document.querySelectorAll('.hero-slide');
+    const titleEl = document.getElementById('hero-title');
+    const descEl = document.getElementById('hero-desc');
+    const indicators = document.querySelectorAll('.indicator');
+
+    if (slides.length === 0 || !titleEl || !descEl) return;
+
+    const slideData = [
+        {
+            title: "Next-Gen Digital Governance",
+            description: "Empowering citizens with seamless municipal services, rapid grievance redressal, and full transparency. Access certificates, utility payments, and urban projects inside one modern workspace."
+        },
+        {
+            title: "Eco-Friendly Initiatives",
+            description: "Building a sustainable future with smart waste management, local solar grids, clean energy, and city-wide afforestation. Participate in our green-canopy programs today."
+        },
+        {
+            title: "Smart City Infrastructure",
+            description: "Experience real-time traffic monitoring, automated public transit systems, and advanced public utility portals. We are transforming Salem into a connected smart metropolis."
+        },
+        {
+            title: "Instant Citizen Support",
+            description: "Have a query or grievance? Connect directly with municipal officers, track complaints online in real-time, and get swift administrative responses in just a few clicks."
+        }
+    ];
+
+    let currentSlide = 0;
+    let slideInterval;
+
+    function showSlide(index) {
+        if (index === currentSlide) return;
+
+        // 1. Fade out current text and translate it slightly
+        titleEl.style.opacity = '0';
+        titleEl.style.transform = 'translateY(-10px)';
+        descEl.style.opacity = '0';
+        descEl.style.transform = 'translateY(10px)';
+
+        // 2. Crossfade background images
+        slides[currentSlide].classList.remove('active');
+        slides[index].classList.add('active');
+
+        // 3. Update indicators
+        indicators[currentSlide].classList.remove('active');
+        indicators[index].classList.add('active');
+
+        currentSlide = index;
+
+        // 4. After text fade-out finishes, swap content and fade back in
+        setTimeout(() => {
+            titleEl.textContent = slideData[index].title;
+            descEl.textContent = slideData[index].description;
+
+            titleEl.style.opacity = '1';
+            titleEl.style.transform = 'translateY(0)';
+            descEl.style.opacity = '1';
+            descEl.style.transform = 'translateY(0)';
+        }, 500);
+    }
+
+    function startAutoSlide() {
+        slideInterval = setInterval(() => {
+            let nextSlide = (currentSlide + 1) % slides.length;
+            showSlide(nextSlide);
+        }, 6000); // Transition every 6 seconds
+    }
+
+    function resetAutoSlide() {
+        clearInterval(slideInterval);
+        startAutoSlide();
+    }
+
+    // Add click listeners to indicators
+    indicators.forEach((indicator, index) => {
+        indicator.addEventListener('click', () => {
+            showSlide(index);
+            resetAutoSlide();
+        });
+    });
+
+    startAutoSlide();
 }

@@ -29,15 +29,47 @@
     background-size: cover;
     background-position: center;
     opacity: 0;
-    animation: fadeSlideshow 20s infinite ease-in-out;
+    transition: opacity 1.2s cubic-bezier(0.4, 0, 0.2, 1) !important;
 }
 
-@keyframes fadeSlideshow {
-    0% { opacity: 0; }
-    5% { opacity: 1; }
-    25% { opacity: 1; }
-    30% { opacity: 0; }
-    100% { opacity: 0; }
+.hero-slide.active {
+    opacity: 1;
+}
+
+/* Hero text transitions */
+#hero-title,
+#hero-desc {
+    transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1), transform 0.5s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+/* Slideshow Indicators / Dots */
+.hero-indicators {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    display: flex;
+    gap: 12px;
+}
+
+.indicator {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: 2px solid rgba(255, 255, 255, 0.8) !important;
+    background: transparent !important;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    padding: 0;
+    outline: none;
+}
+
+.indicator.active {
+    background: white !important;
+    border-color: white !important;
+    width: 32px;
+    border-radius: 6px;
 }
 
 .hero::before {
