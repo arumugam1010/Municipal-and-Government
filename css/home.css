@@ -478,3 +478,36 @@
     border-color: var(--success) !important;
     box-shadow: var(--shadow-lg), 0 8px 16px rgba(16, 185, 129, 0.1) !important;
 }
+
+/* Testimonials Section Styling */
+.testimonials {
+    width: 100%;
+}
+
+.testimonials-grid {
+    width: 100%;
+}
+
+.testimonial-card {
+    transition: all var(--transition-normal);
+}
+
+.testimonial-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md) !important;
+    border-color: var(--primary) !important;
+}
+
+@media (max-width: 992px) {
+    .testimonials-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 24px !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .testimonials-grid {
+        grid-template-columns: 1fr !important;
+        gap: 20px !important;
+    }
+}

@@ -1,7 +1,10 @@
 /* CSS Specific for Secure Login & Register Pages */
 
-body::before {
-    display: none !important;
+body.page-auth::before {
+    display: block !important;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)), url('../assets/bg_auth.webp') !important;
+    animation: none !important;
+    transform: scale(1) translate(0, 0) !important;
 }
 
 .auth-wrapper {
@@ -10,9 +13,8 @@ body::before {
     align-items: center;
     justify-content: center;
     padding: 40px 24px;
-    background: linear-gradient(-45deg, rgba(220, 252, 231, 0.95), rgba(187, 247, 208, 0.95), rgba(204, 251, 241, 0.95), rgba(240, 253, 244, 0.95));
-    background-size: 400% 400%;
-    animation: authGradient 12s ease infinite;
+    background: linear-gradient(-45deg, rgba(243, 232, 255, 0.35), rgba(224, 231, 255, 0.35), rgba(252, 231, 243, 0.3), rgba(255, 255, 255, 0.35));
+    background-size: cover;
     position: relative;
     overflow: hidden;
 }
@@ -32,38 +34,63 @@ body::before {
 .auth-wrapper::before {
     width: 320px;
     height: 320px;
-    background: radial-gradient(circle, rgba(16, 185, 129, 0.25) 0%, rgba(16, 185, 129, 0) 70%);
+    background: radial-gradient(circle, rgba(168, 85, 247, 0.18) 0%, rgba(168, 85, 247, 0) 70%);
     top: 5%;
     left: 5%;
-    animation: floatBlob1 10s infinite ease-in-out;
 }
 
 .auth-wrapper::after {
     width: 360px;
     height: 360px;
-    background: radial-gradient(circle, rgba(20, 184, 166, 0.25) 0%, rgba(20, 184, 166, 0) 70%);
+    background: radial-gradient(circle, rgba(236, 72, 153, 0.15) 0%, rgba(236, 72, 153, 0) 70%);
     bottom: 5%;
     right: 5%;
-    animation: floatBlob2 12s infinite ease-in-out -3s;
 }
 
 @keyframes floatBlob1 {
-    0% { transform: translate(0, 0) scale(1); }
-    33% { transform: translate(30px, -50px) scale(1.1); }
-    66% { transform: translate(-20px, 20px) scale(0.95); }
-    100% { transform: translate(0, 0) scale(1); }
+    0% {
+        transform: translate(0, 0) scale(1);
+    }
+
+    33% {
+        transform: translate(30px, -50px) scale(1.1);
+    }
+
+    66% {
+        transform: translate(-20px, 20px) scale(0.95);
+    }
+
+    100% {
+        transform: translate(0, 0) scale(1);
+    }
 }
 
 @keyframes floatBlob2 {
-    0% { transform: translate(0, 0) scale(1); }
-    50% { transform: translate(-40px, -40px) scale(1.15); }
-    100% { transform: translate(0, 0) scale(1); }
+    0% {
+        transform: translate(0, 0) scale(1);
+    }
+
+    50% {
+        transform: translate(-40px, -40px) scale(1.15);
+    }
+
+    100% {
+        transform: translate(0, 0) scale(1);
+    }
 }
 
 @keyframes authGradient {
-    0% { background-position: 0% 50%, center center; }
-    50% { background-position: 100% 50%, center center; }
-    100% { background-position: 0% 50%, center center; }
+    0% {
+        background-position: 0% 50%, center center;
+    }
+
+    50% {
+        background-position: 100% 50%, center center;
+    }
+
+    100% {
+        background-position: 0% 50%, center center;
+    }
 }
 
 /* Glass card authentication container */
@@ -96,6 +123,16 @@ body::before {
     font-weight: 800;
     color: var(--text-main);
     letter-spacing: -0.5px;
+}
+
+.auth-logo .logo-text {
+    color: #1e1b4b !important;
+    font-weight: 800 !important;
+}
+
+.auth-logo .logo-text span {
+    color: #4f46e5 !important;
+    font-weight: 600 !important;
 }
 
 /* Glassmorphic Auth Card */
@@ -241,34 +278,34 @@ body::before {
     .auth-wrapper {
         padding: 24px 16px;
     }
-    
+
     .auth-card {
         padding: 30px 20px;
     }
-    
+
     .auth-card h2 {
         font-size: 1.5rem;
     }
-    
+
     .auth-subtitle {
         margin-bottom: 24px;
         font-size: 0.88rem;
     }
-    
+
     .role-cards-grid {
         gap: 8px;
     }
-    
+
     .role-card {
         padding: 12px 6px;
     }
-    
+
     .role-card svg {
         width: 20px;
         height: 20px;
         margin-bottom: 6px;
     }
-    
+
     .role-card span {
         font-size: 0.75rem;
     }
@@ -286,11 +323,13 @@ body::before {
 }
 
 .validation-requirement.met {
-    color: #10b981; /* Green color */
+    color: #10b981;
+    /* Green color */
 }
 
 .validation-requirement.unmet {
-    color: #ef4444; /* Red color */
+    color: #ef4444;
+    /* Red color */
 }
 
 .validation-requirement.neutral {
@@ -323,6 +362,7 @@ body::before {
 
 /* Municipal skyline background animation styles */
 .auth-municipal-background {
+    display: none !important;
     position: absolute;
     top: 0;
     left: 0;
@@ -347,20 +387,45 @@ body::before {
 }
 
 @keyframes floatCloud1 {
-    0% { left: -100px; transform: scale(1); }
-    50% { transform: scale(1.1); }
-    100% { left: 100%; transform: scale(1); }
+    0% {
+        left: -100px;
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        left: 100%;
+        transform: scale(1);
+    }
 }
 
 @keyframes floatCloud2 {
-    0% { left: -120px; transform: scale(0.9); }
-    50% { transform: scale(1); }
-    100% { left: 100%; transform: scale(0.9); }
+    0% {
+        left: -120px;
+        transform: scale(0.9);
+    }
+
+    50% {
+        transform: scale(1);
+    }
+
+    100% {
+        left: 100%;
+        transform: scale(0.9);
+    }
 }
 
 @keyframes spinGear {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
 .municipal-vehicle {
@@ -376,13 +441,25 @@ body::before {
 }
 
 @keyframes driveVehicle {
-    0% { left: -60px; }
-    100% { left: 100%; }
+    0% {
+        left: -60px;
+    }
+
+    100% {
+        left: 100%;
+    }
 }
 
 @keyframes driveVehicleReverse {
-    0% { right: -60px; transform: scaleX(-1); }
-    100% { right: 100%; transform: scaleX(-1); }
+    0% {
+        right: -60px;
+        transform: scaleX(-1);
+    }
+
+    100% {
+        right: 100%;
+        transform: scaleX(-1);
+    }
 }
 
 /* Side decoration vectors styling */
@@ -412,4 +489,42 @@ body::before {
     .auth-side-decor {
         display: none !important;
     }
+}
+
+/* Remember me & Forgot Password styles */
+.auth-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+    font-size: 0.85rem;
+}
+
+.remember-me {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    color: var(--text-muted);
+    font-weight: 500;
+}
+
+.remember-me input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--border-light);
+    cursor: pointer;
+}
+
+.forgot-password {
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color var(--transition-fast);
+}
+
+.forgot-password:hover {
+    color: var(--primary-hover);
+    text-decoration: underline;
 }

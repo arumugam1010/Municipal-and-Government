@@ -39,7 +39,7 @@ body::before {
     width: 110%;
     height: 110%;
     z-index: -9999;
-    background-image: linear-gradient(rgba(240, 253, 244, 0.88), rgba(220, 252, 231, 0.88)), url('../assets/bg_home.webp');
+    background-image: linear-gradient(rgba(255, 255, 255, 0.65), rgba(255, 255, 255, 0.65)), url('../assets/bg_home.webp');
     background-size: cover;
     background-position: center;
     pointer-events: none;
@@ -47,31 +47,38 @@ body::before {
 }
 
 body.page-home::before {
-    background-image: linear-gradient(rgba(240, 253, 244, 0.88), rgba(220, 252, 231, 0.88)), url('../assets/bg_home.webp');
+    background-image: linear-gradient(rgba(255, 255, 255, 0.65), rgba(255, 255, 255, 0.65)), url('../assets/bg_home.webp');
 }
+
 body.page-about::before {
-    background-image: linear-gradient(rgba(240, 253, 244, 0.88), rgba(220, 252, 231, 0.88)), url('../assets/bg_about.webp');
+    background-image: linear-gradient(rgba(255, 255, 255, 0.65), rgba(255, 255, 255, 0.65)), url('../assets/bg_about.webp');
 }
+
 body.page-services::before {
-    background-image: linear-gradient(rgba(240, 253, 244, 0.88), rgba(220, 252, 231, 0.88)), url('../assets/bg_services.webp');
+    background-image: linear-gradient(rgba(255, 255, 255, 0.65), rgba(255, 255, 255, 0.65)), url('../assets/bg_services.webp');
 }
+
 body.page-departments::before {
-    background-image: linear-gradient(rgba(240, 253, 244, 0.88), rgba(220, 252, 231, 0.88)), url('../assets/bg_departments.webp');
+    background-image: linear-gradient(rgba(255, 255, 255, 0.65), rgba(255, 255, 255, 0.65)), url('../assets/bg_departments.webp');
 }
+
 body.page-news::before {
-    background-image: linear-gradient(rgba(240, 253, 244, 0.88), rgba(220, 252, 231, 0.88)), url('../assets/bg_news.webp');
+    background-image: linear-gradient(rgba(255, 255, 255, 0.65), rgba(255, 255, 255, 0.65)), url('../assets/bg_news.webp');
 }
+
 body.page-contact::before {
-    background-image: linear-gradient(rgba(240, 253, 244, 0.88), rgba(220, 252, 231, 0.88)), url('../assets/bg_contact.webp');
+    background-image: linear-gradient(rgba(255, 255, 255, 0.65), rgba(255, 255, 255, 0.65)), url('../assets/bg_contact.webp');
 }
 
 @keyframes panBackground {
     0% {
         transform: scale(1) translate(0, 0);
     }
+
     50% {
         transform: scale(1.05) translate(-1%, -1%);
     }
+
     100% {
         transform: scale(1) translate(0, 0);
     }
@@ -188,7 +195,8 @@ body.page-contact::before {
 
 .nav-link {
     text-decoration: none;
-    color: rgba(255, 255, 255, 0.8) !important; /* White color for visibility */
+    color: rgba(255, 255, 255, 0.8) !important;
+    /* White color for visibility */
     font-weight: 500;
     font-size: 0.95rem;
     transition: color var(--transition-fast);
@@ -211,7 +219,8 @@ body.page-contact::before {
 }
 
 .nav-link.active {
-    color: #38bdf8 !important; /* High contrast cyan/sky-blue for the active tab */
+    color: #38bdf8 !important;
+    /* High contrast cyan/sky-blue for the active tab */
 }
 
 .logo-text {
@@ -847,14 +856,17 @@ footer {
 
 .section-header h2 {
     font-size: 2.25rem;
-    font-weight: 700;
+    font-weight: 800;
     margin-bottom: 12px;
     color: var(--text-main);
+    text-shadow: 0 2px 4px rgba(255, 255, 255, 0.95), 0 0 20px rgba(255, 255, 255, 0.8);
 }
 
 .section-header p {
-    color: var(--text-muted);
+    color: var(--text-main);
     font-size: 1rem;
+    font-weight: 600;
+    text-shadow: 0 1px 3px rgba(255, 255, 255, 0.95), 0 0 15px rgba(255, 255, 255, 0.8);
 }
 
 /* Modern Animated Card Styles - Apply globally to all card structures */
@@ -898,9 +910,9 @@ footer {
     border-color: rgba(16, 185, 129, 0.12) !important;
 }
 
-.glass-card, 
-.info-box, 
-.transit-card, 
+.glass-card,
+.info-box,
+.transit-card,
 .checklist-card {
     background: linear-gradient(135deg, #eff6ff 0%, #f0fdf4 100%) !important;
     border-color: rgba(37, 99, 235, 0.1) !important;
@@ -1468,7 +1480,7 @@ body.menu-open>*:not(.navbar) {
 
 /* Premium Animated Preloader Background override */
 #preloader {
-    background-image: 
+    background-image:
         url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60' viewBox='0 0 60 60'%3E%3Cpath d='M60 0H0v60h60V0zM1 59V1h58v58H1z' fill='%232563eb' fill-opacity='0.06'/%3E%3C/svg%3E"),
         linear-gradient(-45deg, #f8fafc, #dbeafe, #e0f7fa, #f1f5f9) !important;
     background-size: 60px 60px, 400% 400% !important;
@@ -1485,7 +1497,7 @@ body.menu-open>*:not(.navbar) {
 }
 
 /* Ensure the preloader contents stack above floating orbs */
-#preloader > div {
+#preloader>div {
     position: relative;
     z-index: 10;
 }
@@ -1530,9 +1542,11 @@ body.menu-open>*:not(.navbar) {
     0% {
         background-position: 0px 0px, 0% 50%;
     }
+
     50% {
         background-position: 30px 30px, 100% 50%;
     }
+
     100% {
         background-position: 60px 60px, 0% 50%;
     }
@@ -1543,9 +1557,11 @@ body.menu-open>*:not(.navbar) {
     0% {
         transform: translate(0, 0) scale(1) rotate(0deg);
     }
+
     50% {
         transform: translate(80px, -50px) scale(1.2) rotate(180deg);
     }
+
     100% {
         transform: translate(-30px, 80px) scale(0.9) rotate(360deg);
     }

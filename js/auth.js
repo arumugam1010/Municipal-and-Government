@@ -14,6 +14,19 @@ function initAuth() {
     const registerForm = document.getElementById('registerForm');
     const loginForm = document.getElementById('loginForm');
 
+    // Prefill Remembered Email if exists
+    if (loginForm) {
+        const rememberedEmail = localStorage.getItem('rememberedEmail');
+        const rememberCheckbox = document.getElementById('rememberMe');
+        const emailInput = document.getElementById('loginEmail');
+        if (rememberedEmail && emailInput) {
+            emailInput.value = rememberedEmail;
+            if (rememberCheckbox) {
+                rememberCheckbox.checked = true;
+            }
+        }
+    }
+
     // Selectable Role Cards setup helper
     const setupRoleCards = (gridId, hiddenInputId) => {
         const grid = document.getElementById(gridId);
@@ -277,6 +290,14 @@ function initAuth() {
                     role: role,
                     name: displayName || 'Portal User'
                 };
+            }
+
+            // Handle Remember Me state
+            const rememberCheckbox = document.getElementById('rememberMe');
+            if (rememberCheckbox && rememberCheckbox.checked) {
+                localStorage.setItem('rememberedEmail', email);
+            } else {
+                localStorage.removeItem('rememberedEmail');
             }
 
             // Set session state in localStorage
