@@ -343,6 +343,21 @@
     .stats-grid, .highlights-grid, .news-grid {
         grid-template-columns: 1fr;
     }
+
+    .hero-cta {
+        flex-direction: column;
+        align-items: stretch;
+        width: 100%;
+        max-width: 280px;
+        margin: 0 auto;
+        gap: 12px;
+    }
+
+    .hero-cta .btn {
+        width: 100% !important;
+        text-align: center;
+        justify-content: center;
+    }
 }
 
 /* Step Cards with Animated Border Hover & Staggered Entrance */

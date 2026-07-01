@@ -18,6 +18,7 @@ h6 {
 
 html {
     background-color: var(--bg-light);
+    overflow-x: hidden;
 }
 
 body {
@@ -540,7 +541,7 @@ footer {
     }
 
     .hero {
-        padding: 110px 16px 40px !important;
+        padding: 110px 16px 80px !important;
     }
 
     /* General content sections' vertical paddings for tablets and mobiles */
