@@ -1567,3 +1567,35 @@ body.menu-open>*:not(.navbar) {
         transform: translate(-30px, 80px) scale(0.9) rotate(360deg);
     }
 }
+
+/* Responsive Preloader adjustments for small/narrow screens */
+#preloader {
+    overflow: hidden !important;
+}
+
+#preloader > div {
+    width: 100%;
+    max-width: 240px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 10px;
+    transform-origin: center center;
+}
+
+@media (max-width: 260px) {
+    #preloader > div {
+        transform: scale(0.85);
+    }
+}
+@media (max-width: 200px) {
+    #preloader > div {
+        transform: scale(0.65);
+    }
+}
+@media (max-width: 150px) {
+    #preloader > div {
+        transform: scale(0.5);
+    }
+}
