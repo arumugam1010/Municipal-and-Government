@@ -16,19 +16,65 @@ h6 {
     font-family: var(--font-heading);
 }
 
-html,
+html {
+    background-color: var(--bg-light);
+}
+
 body {
     font-family: var(--font-body);
-    background-color: var(--bg-light);
-    background-image: linear-gradient(rgba(15, 23, 42, 0.07), rgba(15, 23, 42, 0.07)), url('../assets/site_background.jpg');
-    background-attachment: fixed;
-    background-size: cover;
-    background-position: center;
+    background-color: transparent;
     color: var(--text-main);
     overflow-x: hidden;
     width: 100%;
     line-height: 1.6;
     transition: background-color var(--transition-normal), color var(--transition-normal);
+}
+
+/* Animated Green-themed Municipal Background */
+body::before {
+    content: '';
+    position: fixed;
+    top: -5%;
+    left: -5%;
+    width: 110%;
+    height: 110%;
+    z-index: -9999;
+    background-image: linear-gradient(rgba(240, 253, 244, 0.88), rgba(220, 252, 231, 0.88)), url('../assets/bg_home.webp');
+    background-size: cover;
+    background-position: center;
+    pointer-events: none;
+    animation: panBackground 45s ease-in-out infinite alternate;
+}
+
+body.page-home::before {
+    background-image: linear-gradient(rgba(240, 253, 244, 0.88), rgba(220, 252, 231, 0.88)), url('../assets/bg_home.webp');
+}
+body.page-about::before {
+    background-image: linear-gradient(rgba(240, 253, 244, 0.88), rgba(220, 252, 231, 0.88)), url('../assets/bg_about.webp');
+}
+body.page-services::before {
+    background-image: linear-gradient(rgba(240, 253, 244, 0.88), rgba(220, 252, 231, 0.88)), url('../assets/bg_services.webp');
+}
+body.page-departments::before {
+    background-image: linear-gradient(rgba(240, 253, 244, 0.88), rgba(220, 252, 231, 0.88)), url('../assets/bg_departments.webp');
+}
+body.page-news::before {
+    background-image: linear-gradient(rgba(240, 253, 244, 0.88), rgba(220, 252, 231, 0.88)), url('../assets/bg_news.webp');
+}
+body.page-contact::before {
+    background-image: linear-gradient(rgba(240, 253, 244, 0.88), rgba(220, 252, 231, 0.88)), url('../assets/bg_contact.webp');
+}
+
+@keyframes panBackground {
+    0% {
+        transform: scale(1) translate(0, 0);
+    }
+    50% {
+        transform: scale(1.05) translate(-1%, -1%);
+    }
+    100% {
+        transform: scale(1) translate(0, 0);
+    }
 }
 
 /* Custom Scrollbar */

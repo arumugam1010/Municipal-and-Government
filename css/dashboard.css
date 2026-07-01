@@ -3,7 +3,6 @@
 @import url('variables.css');
 
 body.dashboard-body {
-    background-image: linear-gradient(rgba(241, 245, 249, 0.93), rgba(241, 245, 249, 0.93)), url('../assets/smart_city_cloud.webp');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -11,6 +10,18 @@ body.dashboard-body {
     min-height: 100vh;
     display: flex;
     overflow-x: hidden;
+}
+
+body.dashboard-body.body-admin {
+    background-image: linear-gradient(rgba(240, 253, 244, 0.90), rgba(220, 252, 231, 0.90)), url('../assets/bg_dash_admin.webp');
+}
+
+body.dashboard-body.body-officer {
+    background-image: linear-gradient(rgba(240, 253, 244, 0.90), rgba(220, 252, 231, 0.90)), url('../assets/bg_dash_officer.webp');
+}
+
+body.dashboard-body.body-citizen {
+    background-image: linear-gradient(rgba(240, 253, 244, 0.90), rgba(220, 252, 231, 0.90)), url('../assets/bg_dash_citizen.webp');
 }
 
 /* Dashboard Container */

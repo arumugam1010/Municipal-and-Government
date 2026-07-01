@@ -1,5 +1,9 @@
 /* CSS Specific for Futuristic 404 Page */
 
+body::before {
+    display: none !important;
+}
+
 .error-wrapper {
     min-height: 100vh;
     display: flex;

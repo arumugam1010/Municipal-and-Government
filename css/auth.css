@@ -1,13 +1,17 @@
 /* CSS Specific for Secure Login & Register Pages */
 
+body::before {
+    display: none !important;
+}
+
 .auth-wrapper {
     min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 40px 24px;
-    background: linear-gradient(-45deg, rgba(219, 234, 254, 0.85), rgba(207, 250, 254, 0.85), rgba(220, 252, 231, 0.85), rgba(251, 207, 232, 0.85)), url('../assets/site_background.jpg') no-repeat center center;
-    background-size: 400% 400%, cover;
+    background: linear-gradient(-45deg, rgba(220, 252, 231, 0.95), rgba(187, 247, 208, 0.95), rgba(204, 251, 241, 0.95), rgba(240, 253, 244, 0.95));
+    background-size: 400% 400%;
     animation: authGradient 12s ease infinite;
     position: relative;
     overflow: hidden;
@@ -28,7 +32,7 @@
 .auth-wrapper::before {
     width: 320px;
     height: 320px;
-    background: radial-gradient(circle, rgba(37, 99, 235, 0.3) 0%, rgba(37, 99, 235, 0) 70%);
+    background: radial-gradient(circle, rgba(16, 185, 129, 0.25) 0%, rgba(16, 185, 129, 0) 70%);
     top: 5%;
     left: 5%;
     animation: floatBlob1 10s infinite ease-in-out;
@@ -37,7 +41,7 @@
 .auth-wrapper::after {
     width: 360px;
     height: 360px;
-    background: radial-gradient(circle, rgba(6, 182, 212, 0.3) 0%, rgba(6, 182, 212, 0) 70%);
+    background: radial-gradient(circle, rgba(20, 184, 166, 0.25) 0%, rgba(20, 184, 166, 0) 70%);
     bottom: 5%;
     right: 5%;
     animation: floatBlob2 12s infinite ease-in-out -3s;
